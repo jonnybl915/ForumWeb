@@ -7,9 +7,18 @@
 </head>
 <body>
 {{#username}}
-Hello {{.}}! <form action="/logout" method="post" style="display: inline=block;">
+Hello {{.}}!
+<form action="/logout" method="post" style="display: inline-block;">
     <button type="submit">Logout</button>
+
 </form>
+<br>
+<br>
+<form action="/create-message" method="post">
+    <input type="text" name="message" placeholder="Write your message"/>
+    <input type="hidden" name="replyId" value="{{replyId}}"/>
+    <button type="submit">Submit</button>
+<br>
 <br>
 {{/username}}
 
